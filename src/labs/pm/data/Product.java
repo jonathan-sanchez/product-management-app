@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 /**
  * @author $(Jonathan)
  **/
+//test comment
 public class Product {
     private int id;
     private String name;
@@ -31,6 +32,7 @@ public class Product {
     }
 
     public void setPrice(BigDecimal price) {
+        price = BigDecimal.ONE;
         this.price = price;
     }
 }
