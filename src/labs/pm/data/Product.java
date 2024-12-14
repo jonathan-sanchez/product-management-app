@@ -18,6 +18,13 @@ public class Product {
     private int id;
     private String name;
     private BigDecimal price;
+    /**
+     * A constant that defines a
+     * {@link java.math.BigDecimal BigDecimal} value of the discount
+     * rate
+     * <br>
+     * Discount rate is 10%
+     */
     public static final BigDecimal DISCOUNT_RATE=BigDecimal.valueOf(0.1);
 
     public int getId() {
@@ -44,6 +51,12 @@ public class Product {
         this.price = price;
     }
 
+    /**
+     * Calculates discount based on a product price and
+     * {@link DISCOUNT_RATE discount rate}
+     * @return a {@link java.math.BigDecimal}
+     * value of the discount
+     */
     public BigDecimal getDiscount() {
         return price.multiply(DISCOUNT_RATE).setScale(2, RoundingMode.HALF_UP);
     }
