@@ -28,6 +28,10 @@ public class Product {
     public static final BigDecimal DISCOUNT_RATE=BigDecimal.valueOf(0.1);
     private Rating rating;
 
+    public Product() {
+        this(0, "no name", BigDecimal.ZERO);
+    }
+
     public Product(int id, String name, BigDecimal price, Rating rating) {
         this.id = id;
         this.name = name;
