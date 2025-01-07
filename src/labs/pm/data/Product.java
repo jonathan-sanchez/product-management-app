@@ -2,6 +2,8 @@ package labs.pm.data;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  * {@code Product} class represents properties and behaviours of
@@ -14,7 +16,7 @@ import java.math.RoundingMode;
  * @version 4.0
  * @author $(Jonathan)
  */
-public class Product {
+public abstract class Product {
     private int id;
     private String name;
     private BigDecimal price;
@@ -69,7 +71,32 @@ public class Product {
         return rating;
     }
 
-    public Product applyRating(Rating newRating) {
-        return new Product(this.id, this.name, this.price, newRating);
+    public abstract Product applyRating(Rating newRating);
+
+    /**
+     * Assumes that the best before date is today
+     * @return the current date
+     */
+    public LocalDate getBestBefore() {
+        return LocalDate.now();
+    }
+
+    @Override
+    public String toString() {
+        return id + ", " + name + ", " + price + ", " + getDiscount() + ", " + rating.getStars() + ", " + getBestBefore();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o instanceof Product product) {
+            return id == product.id && Objects.equals(name, product.name);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 }

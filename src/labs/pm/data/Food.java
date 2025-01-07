@@ -18,4 +18,15 @@ public class Food extends Product{
     public LocalDate getBestBefore() {
         return bestBefore;
     }
+
+    @Override
+    public BigDecimal getDiscount() {
+        return (bestBefore.isEqual(LocalDate.now()))
+                ? super.getDiscount() : BigDecimal.ZERO;
+    }
+
+    @Override
+    public Product applyRating(Rating newRating) {
+        return new Food(getId(), getName(), getPrice(), newRating, bestBefore);
+    }
 }
