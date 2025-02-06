@@ -26,4 +26,17 @@ public class ProductManager {
         this.product = product.applyRating(rating);
         return this.product;
     }
+
+    public void printProductReport() {
+        StringBuilder txt = new StringBuilder();
+        txt.append(product);
+        txt.append('\n');
+        if (review != null) {
+            txt.append(review);
+        } else {
+            txt.append("Not Reviewed");
+        }
+        txt.append('\n');
+        System.out.println(txt);
+    }
 }
