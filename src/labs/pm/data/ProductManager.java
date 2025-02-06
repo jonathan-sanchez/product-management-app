@@ -20,4 +20,10 @@ public class ProductManager {
         product = new Drink(id, name, price, rating);
         return product;
     }
+
+    public Product reviewProduct(Product product, Rating rating, String comments) {
+        review = new Review(rating, comments);
+        this.product = product.applyRating(rating);
+        return this.product;
+    }
 }
