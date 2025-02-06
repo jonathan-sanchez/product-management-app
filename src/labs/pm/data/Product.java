@@ -16,7 +16,7 @@ import java.util.Objects;
  * @version 4.0
  * @author $(Jonathan)
  */
-public abstract class Product {
+public sealed abstract class Product permits Food, Drink {
     private int id;
     private String name;
     private BigDecimal price;
