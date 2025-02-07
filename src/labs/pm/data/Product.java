@@ -16,7 +16,7 @@ import java.util.Objects;
  * @version 4.0
  * @author $(Jonathan)
  */
-public sealed abstract class Product permits Food, Drink {
+public sealed abstract class Product implements Rateable<Product> permits Food, Drink {
     private int id;
     private String name;
     private BigDecimal price;
