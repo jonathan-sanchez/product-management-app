@@ -24,7 +24,7 @@ public class Shop {
 
     public static void main(String[] args) {
         //ProductManager (pm)
-        ProductManager pm = new ProductManager(Locale.US);
+        ProductManager pm = new ProductManager("en-GB");
 
         //P1
         //create product, review it, print report
@@ -43,6 +43,7 @@ public class Shop {
         pm.reviewProduct(102, Rating.THREE_STAR, "Coffee was ok");
         pm.reviewProduct(102, Rating.ONE_STAR, "Where is the milk?!");
         pm.reviewProduct(102, Rating.FIVE_STAR, "It's perfect with just ten spoons of sugar!");
+        pm.changeLocale("ru-RU");
         pm.printProductReport(102);
 
         //P3
