@@ -76,6 +76,8 @@ public class Shop {
 
         pm.printProducts(p->p.getPrice().floatValue() < 2, (p1, p2) -> p2.getRating().ordinal()-p1.getRating().ordinal());
 
+        pm.getDiscounts().forEach((rating,discounts)->System.out.println(rating+": "+discounts));
+
 //        pm.printProducts((p1, p2) -> p2.getRating().ordinal() - p1.getRating().ordinal());
 //        pm.printProducts((p1, p2) -> p2.getPrice().compareTo(p1.getPrice()));
 
