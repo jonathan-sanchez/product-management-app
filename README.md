@@ -1,6 +1,6 @@
 ﻿# product-management-app / Oracle Academy
 
-Chapter 1 - Intro to Java
+# Chapter 1 - Intro to Java
   Practice 1-1 - Verify the JDK Installation
   Practice 1-2 - Create, Compile, and Execute a Java Application
 Chapter 2 - Primitive Types, Operators and Flow Control Statements
@@ -45,3 +45,4 @@ Chapter 14 - Java Concurrency and Multithreading
 Chapter 15 - Java Modules and Deployment
   Practice 1-1 - Verify the JDK Installation
   Practice 1-2 - Create, Compile, and Execute a Java Application
+
