@@ -30,14 +30,14 @@ public class Shop {
         //P1
         //create product, review it, print report
         pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
-//        pm.printProductReport(101);
+        pm.printProductReport(101);
         pm.reviewProduct(101, Rating.FOUR_STAR, "Nice hot cup of tea");
         pm.reviewProduct(101, Rating.TWO_STAR, "Rather weak tea");
         pm.reviewProduct(101, Rating.FOUR_STAR, "Fine tea");
         pm.reviewProduct(101, Rating.FOUR_STAR, "Good tea");
         pm.reviewProduct(101, Rating.FIVE_STAR, "Perfect tea");
         pm.reviewProduct(101, Rating.THREE_STAR, "Just add some lemon");
-//        pm.printProductReport(101);
+        pm.printProductReport(101);
 
         //P2
         pm.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
@@ -72,11 +72,11 @@ public class Shop {
         pm.reviewProduct(106, Rating.THREE_STAR, "Better than cookie");
         pm.reviewProduct(106, Rating.TWO_STAR, "Too bitter");
         pm.reviewProduct(106, Rating.ONE_STAR, "I dont get it!");
-        pm.printProductReport(106);
+//        pm.printProductReport(106);
 
-        pm.printProducts(p->p.getPrice().floatValue() < 2, (p1, p2) -> p2.getRating().ordinal()-p1.getRating().ordinal());
-
-        pm.getDiscounts().forEach((rating,discounts)->System.out.println(rating+": "+discounts));
+//        pm.printProducts(p->p.getPrice().floatValue() < 2, (p1, p2) -> p2.getRating().ordinal()-p1.getRating().ordinal());
+//
+//        pm.getDiscounts().forEach((rating,discounts)->System.out.println(rating+": "+discounts));
 
 //        pm.printProducts((p1, p2) -> p2.getRating().ordinal() - p1.getRating().ordinal());
 //        pm.printProducts((p1, p2) -> p2.getPrice().compareTo(p1.getPrice()));
