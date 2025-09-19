@@ -1,5 +1,6 @@
 package labs.pm.data;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
@@ -16,7 +17,7 @@ import java.util.Objects;
  * @version 4.0
  * @author $(Jonathan)
  */
-public sealed abstract class Product implements Rateable<Product> permits Food, Drink {
+public sealed abstract class Product implements Rateable<Product>, Serializable permits Food, Drink {
     private int id;
     private String name;
     private BigDecimal price;
