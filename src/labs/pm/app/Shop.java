@@ -15,6 +15,9 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.Locale;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * {@code Shop} class represents an application that manages Products
@@ -26,5 +29,15 @@ public class Shop {
     public static void main(String[] args) {
         //ProductManager (pm)
         ProductManager pm = ProductManager.getInstance();
+        AtomicInteger clientCount = new AtomicInteger(0);
+        Callable<String> client = () -> {
+            String clientId = "Client " + clientCount.incrementAndGet();
+            String threadName = Thread.currentThread().getName();
+            int productId = ThreadLocalRandom.current().nextInt(63)+101;
+            StringBuilder log = new StringBuilder();
+            log.append(clientId+" "+threadName+"\n-\tstart of log\t-\n");
+            log.append("\n-\tend of log\t-\n");
+            return log.toString();
+        }
     }
 }
